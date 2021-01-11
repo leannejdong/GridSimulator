@@ -2,13 +2,18 @@
 #define GRIDSIMULATOR_TEST_H
 #include "parser.h"
 #include "Matrix.h"
+#include "graph.h"
 #include <vector>
 #include <cassert>
+#include <ranges>
+#include <algorithm>
+#include <fstream>
 
 
 using std::string;
 using std::pair;
 using std::vector;
+using namespace std::ranges;
 void test1()
 {
     string graph_string =
@@ -101,21 +106,46 @@ void test3()
 
     assert(result == expected_result);
 
-    Matrix adj(8);
-    std::cerr << adj.size() << "\n";
-    for (auto &v : result)
-    {
-        // std::cerr << v.first << " " << v.second << "\n";
-        addEdge(adj, v.first, v.second);
-    }
-    displayMatrix(adj);
+    vector<int> v;
 
-    Matrix m(3);
-    std::cerr << "Setting m(1,2) to 5\n";
-    m(1,2) = 5;
-    const Matrix &m2 = m;
-    //matrix m2 = m;
-    std::cerr << "m2(1,2) = " << m2(1,2) << "\n";
+    for (auto p : result) {
+        v.push_back(p.first);
+        v.push_back(p.second);
+    }
+    sort(v);
+    auto last = std::unique(begin(v), end(v));
+    v.erase(last, v.end());
+    std::cerr << v.size() << "\n";
+
+    Graph g(v.size());
+    for (auto &p : result)
+    {
+        g.addEdge(p.first, p.second);
+    }
+    g.printMat();
+
+    vector<int> cycles;
+    g.Gotlieb123(std::back_inserter(cycles));
+    std::ofstream of("cycles.data");
+    std::cout << "Print Cycles " << "\n";
+    print_cycles(std::begin(cycles), std::end(cycles), std::cout);
+    print_cycles(std::begin(cycles), std::end(cycles), of);
+
+//    Matrix adj(8);
+//    std::cerr << adj.size() << "\n";
+//    for (auto &v : result)
+//    {
+//        // std::cerr << v.first << " " << v.second << "\n";
+//        addEdge(adj, v.first, v.second);
+//    }
+//    displayMatrix(adj);
+//
+//    Matrix m(3);
+//    std::cerr << "Setting m(1,2) to 5\n";
+//    m(1,2) = 5;
+//    const Matrix &m2 = m;
+//    //matrix m2 = m;
+//    std::cerr << "m2(1,2) = " << m2(1,2) << "\n";
 }
 #endif //GRIDSIMULATOR_TEST_H
 
