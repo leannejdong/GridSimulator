@@ -1,7 +1,7 @@
 #ifndef GRIDSIMULATOR_TEST_H
 #define GRIDSIMULATOR_TEST_H
 #include "parser.h"
-#include "adjMatrix.h"
+#include "Matrix.h"
 #include <vector>
 #include <cassert>
 
@@ -101,7 +101,7 @@ void test3()
 
     assert(result == expected_result);
 
-    adjMatrix adj(8);
+    Matrix adj(8);
     std::cerr << adj.size() << "\n";
     for (auto &v : result)
     {
@@ -110,10 +110,10 @@ void test3()
     }
     displayMatrix(adj);
 
-    adjMatrix m(3);
+    Matrix m(3);
     std::cerr << "Setting m(1,2) to 5\n";
     m(1,2) = 5;
-    const adjMatrix &m2 = m;
+    const Matrix &m2 = m;
     //matrix m2 = m;
     std::cerr << "m2(1,2) = " << m2(1,2) << "\n";
 }
