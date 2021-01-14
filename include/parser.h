@@ -1,6 +1,8 @@
-//
-// Created by leanne on 1/9/21.
-//
+/*!
+ * The parser.h parse a graph and store it
+ * into a vector of pair. Kind of
+ * like the edge list representation of graph.
+ */
 
 #ifndef GRIDSIMULATOR_PARSER_H
 #define GRIDSIMULATOR_PARSER_H

@@ -1,7 +1,7 @@
 #include <iostream>
 //#include "parser.h"
 //#include "adjMatrix.h"
-#include "test.h"
+#include "../include/test.h"
 int main() {
     test3();
 

@@ -2,7 +2,7 @@
 // Created by leanne on 1/10/21.
 //
 
-#include "Matrix.h"
+#include "../include/Matrix.h"
 #include <iostream>
 
 void addEdge(Matrix &adj, int u, int v)

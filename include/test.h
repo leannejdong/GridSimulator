@@ -1,8 +1,12 @@
+/*!
+ * Implementation of existing operations.
+ * More could be added...
+ */
 #ifndef GRIDSIMULATOR_TEST_H
 #define GRIDSIMULATOR_TEST_H
-#include "parser.h"
-#include "Matrix.h"
-#include "graph.h"
+#include "../include/parser.h"
+#include "../include/Matrix.h"
+#include "../include/graph.h"
 #include <vector>
 #include <cassert>
 #include <ranges>

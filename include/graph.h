@@ -1,6 +1,7 @@
-//
-// Created by leanne on 1/11/21.
-//
+/*!
+ * A graph is created through ajacentcy matrix.
+ * It provides all the necessary operation.
+ */
 
 #ifndef GRIDSIMULATOR_GRAPH_H
 #define GRIDSIMULATOR_GRAPH_H

@@ -1,7 +1,7 @@
 //
 // Created by leanne on 1/9/21.
 //
-#include "parser.h"
+#include "../include/parser.h"
 #include <sstream>
 #include <fstream>
 #include <cassert>

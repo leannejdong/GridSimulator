@@ -1,6 +1,7 @@
-//
-// Created by leanne on 1/10/21.
-//
+/*!
+ * This class wasn't quite needed since we can just use Gotlieb's
+ * graph class.
+ */
 
 #ifndef GRIDSIMULATOR_ADHMATRIX_H
 #define GRIDSIMULATOR_ADHMATRIX_H
