@@ -1,5 +1,4 @@
 # Simple Hydro Power grid simulator
-(just started...)
 
 # Plan
 
